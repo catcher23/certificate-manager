@@ -56,10 +56,9 @@ export default class Customer extends Component {
     return(
       <div className="customerDetail">
         <h4>Customer Certificates</h4>
-          {!customer && customerState.isFetching &&
-            <div>
-              <p>Loading customer certificates</p>
-            </div>
+          
+          {customerState.isFetching &&
+            <div className="loader">Loading...</div>
           }
 
           {customer && !customerState.isFetching &&

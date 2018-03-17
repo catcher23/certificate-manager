@@ -6,6 +6,7 @@ import {
 import {Link} from 'react-router';
 import {ConfirmationModal} from './ConfirmationModal';
 import {sortObjectsById} from '../utils'
+ 
 
 export default class Customers extends Component {
   constructor(props) {
@@ -38,8 +39,8 @@ export default class Customers extends Component {
       <div className="col-md-12">
       <h4>Customers</h4>
 
-      {!customers && customerState.isFetching &&
-        <p>Loading customers....</p>
+      {customerState.isFetching &&
+        <div className="loader">Loading...</div>
       }
 
       {customers.length <= 0 && !customerState.isFetching &&
@@ -47,6 +48,7 @@ export default class Customers extends Component {
       }
 
       {customers && customers.length > 0 && !customerState.isFetching &&
+      <div>
         <table className="table">
         <thead>
           <tr>
@@ -72,6 +74,7 @@ export default class Customers extends Component {
         }
         </tbody>
         </table>
+        </div>
       }
 
       <ConfirmationModal
