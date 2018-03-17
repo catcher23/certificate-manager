@@ -3,17 +3,12 @@ const path = require('path');
 const Sequelize = require('sequelize');
 const basename = path.basename(module.filename);
 const env = process.env.NODE_ENV || 'development';
-if (env === 'production') {
-  try {
-    const config = require('../config/config');
-  } catch {}
-}
 
 const db = {};
 
 const sequelize = new Sequelize(
-  config ? config.database_url : ENV['database_url'],
-  {dialect: config ? config.dialect : ENV['dialect']}
+  ENV['database_url'],
+  {dialect: ENV['dialect']}
 );
 
 fs
