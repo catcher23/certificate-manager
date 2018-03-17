@@ -4,7 +4,9 @@ const Sequelize = require('sequelize');
 const basename = path.basename(module.filename);
 const env = process.env.NODE_ENV || 'development';
 if (env === 'production') {
-  const config = require('../config/config');
+  try {
+    const config = require('../config/config');
+  } catch {}
 }
 
 const db = {};
