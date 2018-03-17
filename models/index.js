@@ -7,8 +7,8 @@ const env = process.env.NODE_ENV || 'development';
 const db = {};
 
 const sequelize = new Sequelize(
-  ENV['database_url'],
-  {dialect: ENV['dialect']}
+  process.env.database_url,
+  {dialect: process.env.dialect}
 );
 
 fs
