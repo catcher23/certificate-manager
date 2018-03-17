@@ -2,11 +2,17 @@ const fs = require('fs');
 const path = require('path');
 const Sequelize = require('sequelize');
 const basename = path.basename(module.filename);
-const env = process.env.NODE_ENV || 'development';
-const config = require('../config/config')[env];
+const env = ENV['environment'] || 'development';
+if (env === 'production') {
+  const config = require('../config/config');
+}
+
 const db = {};
 
-const sequelize = new Sequelize(config.database_url, {dialect: config.dialect});
+const sequelize = new Sequelize(
+  config ? config.database_url : ENV['database_url'],
+  {dialect: config ? config.dialect : ENV['dialect']}
+);
 
 fs
   .readdirSync(__dirname)
