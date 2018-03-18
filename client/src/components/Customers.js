@@ -44,7 +44,7 @@ export default class Customers extends Component {
       }
 
       {customers.length <= 0 && !customerState.isFetching &&
-        <p>No Customers Available. Add A Customer to List here.</p>
+        <p>No Customers Available.</p>
       }
 
       {customers && customers.length > 0 && !customerState.isFetching &&
