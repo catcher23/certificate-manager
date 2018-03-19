@@ -9,7 +9,7 @@ exports.config = {
   /**
    * Array of application names.
    */
-  app_name: ['protected-wave-78897'],
+  app_name: ['certificate-manager'],
   /**
    * Your New Relic license key.
    */
