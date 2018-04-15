@@ -20,4 +20,4 @@ In the root folder,
 - Add linting to ensure formatting and syntax are consistent throughout the app
 - Add sorting and filtering
 
-https://obscure-chamber-75596.herokuapp.com/
+http://certificate-manager.herokuapp.com/
